@@ -1,4 +1,4 @@
 mmr
 ===
 
-for my projects
+for my projects, as well as important issues.
