@@ -1,0 +1,59 @@
+<! DOCTYPE html >
+<html>
+	<head>
+		<title>ASSIGNMENT</title>
+		<link rel="stylesheet" media="screen" href="livingSite2.css"/>
+	</head>
+	
+	<body>
+	<div id="container" >
+		<div id="post">
+		<img src="paul n chantal.jpg" height="300px" width="650px"><br>
+		<p>LEAVE YOUR COMMENT.</p><br><br>
+		</div>
+		
+		<form id="UserComment" name="myForm" onSubmit="checkEmptyFields(myForm)">
+			<br><br>
+			NICKNAME:<input id="nickname" type="text" placeholder="nickname" size="60" required autofocus/><br>
+			COMMENT:<br>
+			<textarea id="comment" rows="10" cols="60" placeholder="your comment"></textarea><br>
+			<input type="button" value="Submit" onClick="UserInput()">
+		</form>
+		
+	</div>	
+	<div id="showComments"></div>
+	
+	<script>
+	//this function prints out the nickname of the user and his comment
+		function UserInput(){
+			var UI= document.getElementById("comment").value; //variable UI holds the comment made by the user
+			var name= document.getElementById("nickname").value; //variable name holds the nickname of the user
+			var d= new Date(); //creates an object instance of date
+		
+			var emptyOrNot=checkEmptyFields(name,UI); 
+//the value return by the checkEmptyFields(r,y) function is assigned to the variable emptyOrNot
+			
+			if(emptyOrNot == true){  //if not empty the comment as well as the nickname of the commenter is printed to the screen
+			document.getElementById("showComments").innerHTML +="<div style='border:2px solid green;padding:5px 5px;border-radius:3em';margin:5px 5px>" + name +" commented " + "<br>" + UI +"<br>" + d +"<br>" + "</div>";
+			}
+		}
+		//this function checks for empty fieldS and returns either a true or false
+		function checkEmptyFields(name,UI){
+			if(name=="" || name==null){
+				alert("THE NICKNAME FIELD IS EMPTY");
+				return false;
+			}
+			if(UI== "" || UI==null){
+			alert("THE COMMENT FIELD IS EMPTY");
+			return false
+			}
+			
+			else{
+				return true;
+			}
+		}
+			</script>
+	</body>
+
+	
+</html>

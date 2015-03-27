@@ -1,0 +1,20 @@
+body{
+	background-image:url("yellow_rock.gif");
+}
+#container{
+	float:left;
+	width:50%;
+	height:100%;
+}
+#post{
+	border:2px solid green;
+}
+#showComments{
+	float:left;
+	overflow:auto;
+	height:100%;
+	width:50%;
+	background-color:#CCFFCC;
+	padding:auto 20px;
+	margin:auto;
+}
